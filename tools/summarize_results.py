@@ -24,7 +24,7 @@ def main():
     }
     for name, rows in datasets.items():
         with (args.output/f'{name}.csv').open('w',newline='') as f:
-            writer = csv.DictWriter(f, fieldnames=list(rows[0]))
+            writer = csv.DictWriter(f, fieldnames=list(rows[0]), lineterminator='\n')
             writer.writeheader()
             writer.writerows(rows)
     eq=datasets['equivalence']; safety=s['experiment_3_safety_and_diff']['part_a_safety_guardrail']

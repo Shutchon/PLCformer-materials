@@ -2,7 +2,7 @@
   "format_version": 1,
   "version": "1.0.0",
   "files_sha256": {
-    ".gitattributes": "89f62c6bb74a39974b6939baf209fe194af6890348665e555c91fe6d35777a37",
+    ".gitattributes": "ced1a205adb2fcf4aab79ba63576673f549a5f9eeb4c98172999e4f40a0f9e10",
     ".gitignore": "729ca4ebe688bc8ff09c6b1bbbbb73292a5c510515426bf717c00164f0cc45c0",
     "CITATION.cff": "69ae7c4bb4e35b3fbff987ab9395fbe7b908f5538be15b27fca532768cf394d1",
     "PROVENANCE.json": "5e56e0787bfe36e60e1024fcac28a9971f14a7c9a816fa5b12a396c82ff1b240",
@@ -48,12 +48,12 @@
     "results/reference/ablation_results.json": "719e63c8ebc6876a15137bdcce72329516fe4165acc5017fb88214eeaf6adefa",
     "results/reference/results_summary.json": "552351a28d17f3994d4cdc1cade9436a20c1c58e87663e65ec8b1ed71ca909a9",
     "results/reference/summary/SUMMARY.md": "6ec201c7a558792444ac790dd7ecbfe26e0d6f2cc48f5c426bb0b60aa3cb4b29",
-    "results/reference/summary/controller_batches.csv": "763597af6db15c4ece44fa7757a93bef02f7025224c7af90e09957f59f1f13a3",
-    "results/reference/summary/cpu_throughput.csv": "216a25bbd407e3085ae8e7224b4751e2ff9c380830c3f9286d5344dbaaeca05a",
-    "results/reference/summary/equivalence.csv": "e6c1384e2eb2a5bf36a1071ee6b45dbeca1bb6227f08831041769fd3aff3bac3",
-    "results/reference/summary/latency.csv": "f7d7c0f468b7d6975ff62984da31b53b2d2741d8d1c954b4a06b8749f46266fe",
-    "results/reference/summary/primitive_error.csv": "04b324597da935e88b862e9cb52f9df83699b7b9bcc3a6ae27eef2eff96ae499",
-    "results/reference/summary/surrogate_trajectory.csv": "13f0373f9722ceb4cf70b0929d404f0efcf9019ffa3a928d1a9811adb14ec9fe",
+    "results/reference/summary/controller_batches.csv": "0bb29fe810d7e82b9c83701e1317a0e9f7d96e1f7aecd865dfcacf67645248d3",
+    "results/reference/summary/cpu_throughput.csv": "9817713a0cc5571d330b684b4b4a54c3b236c0e75247aab05066337db46370a1",
+    "results/reference/summary/equivalence.csv": "4c2f84af7e738a0e34dd7a6c2326553c0461adac63ec298003e430c6737dbbf7",
+    "results/reference/summary/latency.csv": "349d2e3bb8eb99bf2e19845344971b4e205d2993a50970d9be7393e77ed5048c",
+    "results/reference/summary/primitive_error.csv": "24565cabde8da99f57d186bfe462a61e3d9b7acf4e39202d7cca70a8f6e457af",
+    "results/reference/summary/surrogate_trajectory.csv": "606df92ed301d4d68b2be8d0b3024061cb06c56231121acafb48071151879acf",
     "runtime/__init__.py": "a95499858de7d5bdc7208da48971370b3016631ed73a77453471059d75caab53",
     "runtime/fast_engine.py": "6bd57262cc7d79ca4a11be92cb5f59c8dfae180a1b1f9b1db63b6f46cdf8d01d",
     "runtime/host.py": "e0216de270e9a4968404ec695aa8219269899cd228406b6989b17e87539fe502",
@@ -63,7 +63,7 @@
     "tests/test_phase2.py": "82b72377c696d6603c8630767b7eed116f23979960c8ee8718b00285ee4eefa9",
     "tests/test_phase3.py": "6e7b57b4f052a736119726e7eb6bd8e7009688e2e3905c08666560569b685a61",
     "tools/export_materials.py": "a28c12e03f62bc2e8d7f8774abc6d566f262f268dc99a73846ad14d1af5c8b87",
-    "tools/summarize_results.py": "fe66371b534ff8607c700628fd9ec30f104b8bdd9459bae48c171ab62e14ef5f",
+    "tools/summarize_results.py": "792925f01686b8331f010d3b61035064dd230d07fddbbc7287a56aad94038bb0",
     "tools/verify_artifacts.py": "d5242d8ac39c33b373133f4fbf102c970e4bb409b27b500ce571f65d3060b1e4"
   }
 }
