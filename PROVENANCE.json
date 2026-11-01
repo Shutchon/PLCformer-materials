@@ -1,0 +1,45 @@
+{
+  "format_version": 1,
+  "package": "PLCformer-materials",
+  "version": "1.0.0",
+  "packaged_date": "2026-11-01",
+  "origin_project": "PLCformer",
+  "origin_base_commit": "153a07d98cf0d509b29ceab1723571604f72b821",
+  "origin_snapshot": "Revised working-tree source matching the source hashes in results/reference/results_summary.json; not merely the base commit.",
+  "source_sha256": {
+    "compiler/__init__.py": "22098698fee20009a522e6bc261848598f573ef8ad8544862e4ba542eb531402",
+    "compiler/assembler.py": "083d54a52c92e02eab8de6b2c69fb038d3aa532dfb632b1cdc21f1e88de63ba8",
+    "compiler/build_checkpoint.py": "870cfc4951b05e35b3364f66277d7647bc43b621f7a8fd9c8d244e60a66ac5d5",
+    "compiler/gdn_primitives.py": "ad030a31c297f59325705333c077e7cddef4fa3a64600699667074671274fbb7",
+    "compiler/isa.py": "8d925756a09eee5342d74204cd521858bcebeca2640435d13e15bd30e0bffa07",
+    "compiler/memory_map.py": "e68f950089ad8c6b780b835fe9cf0d2de2c887c106d35e79131ff20d0a24eb3a",
+    "compiler/mlp_alu.py": "5cddfb2c4e2255fdaee7566242789e998dbdb09f1ba775cb988f8f7e89e2a4c4",
+    "compiler/numeric.py": "036ade45e7a2ccaaf85bdf188aa79914f9640aac86633db9e28700cdd59076e2",
+    "compiler/st_transpiler.py": "3c1b72823ca46e71619ed561f29252fb681edea573b9a7c184a12b9dab74d5f8",
+    "runtime/__init__.py": "a95499858de7d5bdc7208da48971370b3016631ed73a77453471059d75caab53",
+    "runtime/fast_engine.py": "6bd57262cc7d79ca4a11be92cb5f59c8dfae180a1b1f9b1db63b6f46cdf8d01d",
+    "runtime/host.py": "e0216de270e9a4968404ec695aa8219269899cd228406b6989b17e87539fe502",
+    "runtime/plant_sim.py": "4e8f463e1024b81e47baa1bd448731a229171ff369cb87dd8adfb9f3b668d195",
+    "benchmarks/__init__.py": "248ea8db76d3d2cc3d6859d70bfca8bb8d2063c8ce4d0d4a35debe7610d68126",
+    "benchmarks/benchmark_speed.py": "d30c1d607984d016934863d1b62a7012b85c358dddc8fa0abf7149bb558ea3fa",
+    "benchmarks/direct_baseline.py": "f2569c369620841c565b82f0f3742ccb52ee63e9ace61697f360d103ec41d23d",
+    "benchmarks/experiment_safety_and_diff.py": "c299713d0ffccb4d36e8b1a3ff508ceb96aeeccf487c1d530d3eab714080a108",
+    "benchmarks/run_ablations.py": "50fbe641f25190564ee445549b6c182acd0381198c95d22e4e95c16a743bfcd3",
+    "benchmarks/run_all_experiments.py": "0bcf5cb6646d49dff4e7c77301a512d98680e2a916e161c037d1344e593bc010",
+    "benchmarks/verify_equivalence.py": "d6b8deef6f450bdf2334fa1e9c3c726272354852617e9ba029239b9792814b36"
+  },
+  "excluded": [
+    "manuscript and LaTeX figures",
+    "submission documents and review notes",
+    "main-project Git history",
+    "virtual environment and caches",
+    "development plan"
+  ],
+  "packaging_changes": [
+    "Added README, artifact documentation, software citation metadata, example, export/verification/report tools.",
+    "Added generated synthetic input schedules and initial safetensors exports for the four programs.",
+    "Preserved recorded result JSON files under results/reference.",
+    "Removed the arbitrary minimum speed threshold from the copied performance smoke test for hardware portability; execution and benchmark source are unchanged."
+  ],
+  "publication_status": "Local reproducibility package; no remote publication claimed."
+}

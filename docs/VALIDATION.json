@@ -1,0 +1,23 @@
+{
+  "date": "2026-11-01",
+  "tests_passed": 47,
+  "test_seconds": 54.93,
+  "example_outputs": [
+    0,
+    1,
+    1,
+    0,
+    0
+  ],
+  "isolated_imports_verified": true,
+  "generated_trace_matches": 4,
+  "checkpoint_initial_state_and_gate_weight_matches": 4,
+  "full_portability_rerun": {
+    "scans": 400000,
+    "mismatched_scans": 0,
+    "eager_prefix_scans_per_program": 500,
+    "batch_device": "cpu",
+    "elapsed_seconds": 106.078
+  },
+  "note": "Reference timing JSON files are preserved. The portability rerun validates execution, not identical performance."
+}

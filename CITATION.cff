@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "Please cite this software artifact and its exact Git commit when using the materials."
+type: software
+title: "PLCformer Materials: Bounded Controller Compilation and Reproducibility Artifacts"
+version: 1.0.0
+authors:
+  - family-names: Premchaisawatt
+    given-names: Shutchon
+  - family-names: Tashoo
+    given-names: Krit
+  - family-names: Boonsaner
+    given-names: Narong
+date-released: 2026-11-01
+keywords:
+  - programmable logic controller
+  - constructive compilation
+  - gated-delta memory
+  - SwiGLU
+  - reproducibility

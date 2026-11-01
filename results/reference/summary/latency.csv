@@ -1,0 +1,5 @@
+program_file,mean_us,std_us,median_us,p99_us,p999_us,max_us,sample_count
+self_hold.il,1.424,0.296,1.417,1.75,3.461,17.5,10000
+star_delta.il,3.173,0.403,3.166,4.0,8.5,24.208,10000
+traffic_light.il,6.444,0.517,6.417,8.083,13.001,25.417,10000
+sorting.il,2.225,0.367,2.208,2.792,7.5,21.0,10000

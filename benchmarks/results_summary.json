@@ -1,0 +1,421 @@
+{
+  "project": "PLCformer: Constructive PLC-IR Execution with Gated-Delta Memory and SwiGLU Networks",
+  "total_evaluation_time_sec": 51.722,
+  "environment": {
+    "python": "3.10.11",
+    "platform": "macOS-26.2-arm64-arm-64bit",
+    "machine": "arm64",
+    "cpu": "Apple M5",
+    "logical_cpus": "10",
+    "memory_bytes": "34359738368",
+    "torch_threads": 4,
+    "mps_available": true,
+    "packages": {
+      "torch": "2.14.1",
+      "numpy": "2.2.6",
+      "numba": "0.68.1",
+      "safetensors": "0.8.0",
+      "pytest": "9.2.0"
+    },
+    "source_sha256": {
+      "compiler/__init__.py": "22098698fee20009a522e6bc261848598f573ef8ad8544862e4ba542eb531402",
+      "compiler/assembler.py": "083d54a52c92e02eab8de6b2c69fb038d3aa532dfb632b1cdc21f1e88de63ba8",
+      "compiler/build_checkpoint.py": "870cfc4951b05e35b3364f66277d7647bc43b621f7a8fd9c8d244e60a66ac5d5",
+      "compiler/gdn_primitives.py": "ad030a31c297f59325705333c077e7cddef4fa3a64600699667074671274fbb7",
+      "compiler/isa.py": "8d925756a09eee5342d74204cd521858bcebeca2640435d13e15bd30e0bffa07",
+      "compiler/memory_map.py": "e68f950089ad8c6b780b835fe9cf0d2de2c887c106d35e79131ff20d0a24eb3a",
+      "compiler/mlp_alu.py": "5cddfb2c4e2255fdaee7566242789e998dbdb09f1ba775cb988f8f7e89e2a4c4",
+      "compiler/numeric.py": "036ade45e7a2ccaaf85bdf188aa79914f9640aac86633db9e28700cdd59076e2",
+      "compiler/st_transpiler.py": "3c1b72823ca46e71619ed561f29252fb681edea573b9a7c184a12b9dab74d5f8",
+      "runtime/__init__.py": "a95499858de7d5bdc7208da48971370b3016631ed73a77453471059d75caab53",
+      "runtime/fast_engine.py": "6bd57262cc7d79ca4a11be92cb5f59c8dfae180a1b1f9b1db63b6f46cdf8d01d",
+      "runtime/host.py": "e0216de270e9a4968404ec695aa8219269899cd228406b6989b17e87539fe502",
+      "runtime/plant_sim.py": "4e8f463e1024b81e47baa1bd448731a229171ff369cb87dd8adfb9f3b668d195",
+      "benchmarks/__init__.py": "248ea8db76d3d2cc3d6859d70bfca8bb8d2063c8ce4d0d4a35debe7610d68126",
+      "benchmarks/benchmark_speed.py": "d30c1d607984d016934863d1b62a7012b85c358dddc8fa0abf7149bb558ea3fa",
+      "benchmarks/direct_baseline.py": "f2569c369620841c565b82f0f3742ccb52ee63e9ace61697f360d103ec41d23d",
+      "benchmarks/experiment_safety_and_diff.py": "c299713d0ffccb4d36e8b1a3ff508ceb96aeeccf487c1d530d3eab714080a108",
+      "benchmarks/run_ablations.py": "50fbe641f25190564ee445549b6c182acd0381198c95d22e4e95c16a743bfcd3",
+      "benchmarks/run_all_experiments.py": "0bcf5cb6646d49dff4e7c77301a512d98680e2a916e161c037d1344e593bc010",
+      "benchmarks/verify_equivalence.py": "d6b8deef6f450bdf2334fa1e9c3c726272354852617e9ba029239b9792814b36"
+    },
+    "timing_note": "wall-clock samples on a general-purpose OS; no certified WCET"
+  },
+  "experiment_1_equivalence": {
+    "experiment": "Trace-based process-image equivalence",
+    "benchmarks": [
+      {
+        "benchmark": "Motor Start/Stop Interlock",
+        "program_file": "self_hold.il",
+        "input_seed": 42,
+        "num_il_instructions": 5,
+        "scan_cycles_tested": 100000,
+        "total_tokens_executed": 500000,
+        "plcformer_accuracy_pct": 100.0,
+        "mismatched_cycles": 0,
+        "full_state_mismatched_cycles": 0,
+        "max_linf_error": 0.0,
+        "state_measurement": "post-instruction normalization; before output threshold",
+        "state_fields": "X,Y,M,T.DN,C.DN,D,T.ACC/PRE/previous-enable,C.ACC/PRE/PREV,stack",
+        "pytorch_eager_cycles": 500,
+        "pytorch_eager_500_exact": true,
+        "pytorch_max_state_error": 0.0,
+        "verification_wall_sec": 1.1174668749954435
+      },
+      {
+        "benchmark": "Star-Delta Motor Starter",
+        "program_file": "star_delta.il",
+        "input_seed": 43,
+        "num_il_instructions": 16,
+        "scan_cycles_tested": 100000,
+        "total_tokens_executed": 1600000,
+        "plcformer_accuracy_pct": 100.0,
+        "mismatched_cycles": 0,
+        "full_state_mismatched_cycles": 0,
+        "max_linf_error": 0.0,
+        "state_measurement": "post-instruction normalization; before output threshold",
+        "state_fields": "X,Y,M,T.DN,C.DN,D,T.ACC/PRE/previous-enable,C.ACC/PRE/PREV,stack",
+        "pytorch_eager_cycles": 500,
+        "pytorch_eager_500_exact": true,
+        "pytorch_max_state_error": 0.0,
+        "verification_wall_sec": 1.708578124998894
+      },
+      {
+        "benchmark": "4-Way Traffic Light Controller",
+        "program_file": "traffic_light.il",
+        "input_seed": 44,
+        "num_il_instructions": 37,
+        "scan_cycles_tested": 100000,
+        "total_tokens_executed": 3700000,
+        "plcformer_accuracy_pct": 100.0,
+        "mismatched_cycles": 0,
+        "full_state_mismatched_cycles": 0,
+        "max_linf_error": 0.0,
+        "state_measurement": "post-instruction normalization; before output threshold",
+        "state_fields": "X,Y,M,T.DN,C.DN,D,T.ACC/PRE/previous-enable,C.ACC/PRE/PREV,stack",
+        "pytorch_eager_cycles": 500,
+        "pytorch_eager_500_exact": true,
+        "pytorch_max_state_error": 0.0,
+        "verification_wall_sec": 2.7884624999933294
+      },
+      {
+        "benchmark": "Automated Conveyor Sorting",
+        "program_file": "sorting.il",
+        "input_seed": 45,
+        "num_il_instructions": 10,
+        "scan_cycles_tested": 100000,
+        "total_tokens_executed": 1000000,
+        "plcformer_accuracy_pct": 100.0,
+        "mismatched_cycles": 0,
+        "full_state_mismatched_cycles": 0,
+        "max_linf_error": 0.0,
+        "state_measurement": "post-instruction normalization; before output threshold",
+        "state_fields": "X,Y,M,T.DN,C.DN,D,T.ACC/PRE/previous-enable,C.ACC/PRE/PREV,stack",
+        "pytorch_eager_cycles": 500,
+        "pytorch_eager_500_exact": true,
+        "pytorch_max_state_error": 0.0,
+        "verification_wall_sec": 1.4683393750019604
+      }
+    ]
+  },
+  "experiment_2_throughput": {
+    "experiment": "Execution throughput (median of repeats)",
+    "single_instance": [
+      {
+        "program": "Motor Start/Stop Interlock",
+        "program_file": "self_hold.il",
+        "num_instructions": 5,
+        "input_seed": 42,
+        "jit_cycles_per_repeat": 50000,
+        "python_cycles_per_repeat": 200,
+        "pytorch_mode_a_cycles_per_sec": 237.46667003919248,
+        "reference_python_cycles_per_sec": 368918.6105556084,
+        "numba_jit_cycles_per_sec": 1226192.7023404296,
+        "numba_jit_tokens_per_sec": 6130963.511702148,
+        "numba_jit_amortized_us": 0.8155324999825098,
+        "direct_numba_cycles_per_sec": 114843526.40227988,
+        "speedup_jit_over_eager": 5163.641289693639,
+        "direct_numba_output_match": true,
+        "neural_jit_repeat_seconds": [
+          0.04077662499912549,
+          0.04047433399682632,
+          0.04089170799852582,
+          0.04101029199955519,
+          0.04075912499683909
+        ],
+        "direct_numba_repeat_seconds": [
+          0.0004582920009852387,
+          0.00041791600233409554,
+          0.00038387500535463914,
+          0.0004353749973233789,
+          0.0006018749991199002
+        ],
+        "pytorch_repeat_seconds": [
+          0.8422234579993528,
+          0.8275359159961226,
+          0.8586477499993634
+        ],
+        "reference_repeat_seconds": [
+          0.0005421249952632934,
+          0.0005286669984343462,
+          0.0006379580008797348
+        ],
+        "timing_scope": "batch JIT includes input latching and output arrays; Python includes per-scan API overhead"
+      },
+      {
+        "program": "Star-Delta Motor Starter",
+        "program_file": "star_delta.il",
+        "num_instructions": 16,
+        "input_seed": 43,
+        "jit_cycles_per_repeat": 50000,
+        "python_cycles_per_repeat": 200,
+        "pytorch_mode_a_cycles_per_sec": 118.2437375899708,
+        "reference_python_cycles_per_sec": 156158.50057611155,
+        "numba_jit_cycles_per_sec": 391905.45310418296,
+        "numba_jit_tokens_per_sec": 6270487.249666927,
+        "numba_jit_amortized_us": 2.5516358399181627,
+        "direct_numba_cycles_per_sec": 55419592.97047433,
+        "speedup_jit_over_eager": 3314.3865467377072,
+        "direct_numba_output_match": true,
+        "neural_jit_repeat_seconds": [
+          0.12962962500023423,
+          0.12704987500183051,
+          0.12816608299908694,
+          0.12758179199590813,
+          0.12734045799879823
+        ],
+        "direct_numba_repeat_seconds": [
+          0.0009022079975693487,
+          0.0008518750037183054,
+          0.0013515000027837232,
+          0.000778875000833068,
+          0.0009151250051218085
+        ],
+        "pytorch_repeat_seconds": [
+          1.7202274160008528,
+          1.6769007080001757,
+          1.6914214999997057
+        ],
+        "reference_repeat_seconds": [
+          0.0012807500024791807,
+          0.0012969170056749135,
+          0.0012701249943347648
+        ],
+        "timing_scope": "batch JIT includes input latching and output arrays; Python includes per-scan API overhead"
+      },
+      {
+        "program": "4-Way Traffic Light Controller",
+        "program_file": "traffic_light.il",
+        "num_instructions": 37,
+        "input_seed": 44,
+        "jit_cycles_per_repeat": 50000,
+        "python_cycles_per_repeat": 200,
+        "pytorch_mode_a_cycles_per_sec": 61.60388169538497,
+        "reference_python_cycles_per_sec": 72966.07067380506,
+        "numba_jit_cycles_per_sec": 175868.85811083723,
+        "numba_jit_tokens_per_sec": 6507147.750100978,
+        "numba_jit_amortized_us": 5.686054999969201,
+        "direct_numba_cycles_per_sec": 33114402.866946556,
+        "speedup_jit_over_eager": 2854.834034330216,
+        "direct_numba_output_match": true,
+        "neural_jit_repeat_seconds": [
+          0.2906757919990923,
+          0.28368329200020526,
+          0.28531733300042106,
+          0.28430274999846006,
+          0.2834210829969379
+        ],
+        "direct_numba_repeat_seconds": [
+          0.001482833999034483,
+          0.0014970419942983426,
+          0.0015099170050234534,
+          0.0015225419992930256,
+          0.0015631249989382923
+        ],
+        "pytorch_repeat_seconds": [
+          3.246548666997114,
+          3.211689708994527,
+          3.283634915998846
+        ],
+        "reference_repeat_seconds": [
+          0.002787375000480097,
+          0.00274100000387989,
+          0.002739625000685919
+        ],
+        "timing_scope": "batch JIT includes input latching and output arrays; Python includes per-scan API overhead"
+      },
+      {
+        "program": "Automated Conveyor Sorting",
+        "program_file": "sorting.il",
+        "num_instructions": 10,
+        "input_seed": 45,
+        "jit_cycles_per_repeat": 50000,
+        "python_cycles_per_repeat": 200,
+        "pytorch_mode_a_cycles_per_sec": 161.5513181147963,
+        "reference_python_cycles_per_sec": 192215.28123261448,
+        "numba_jit_cycles_per_sec": 617582.5784652908,
+        "numba_jit_tokens_per_sec": 6175825.784652908,
+        "numba_jit_amortized_us": 1.6192166600376368,
+        "direct_numba_cycles_per_sec": 71241917.21379448,
+        "speedup_jit_over_eager": 3822.8259953066095,
+        "direct_numba_output_match": true,
+        "neural_jit_repeat_seconds": [
+          0.08133224999619415,
+          0.08134716699714772,
+          0.08069304200034821,
+          0.08062687499477761,
+          0.08096083300188184
+        ],
+        "direct_numba_repeat_seconds": [
+          0.0007018340038484894,
+          0.000760041999456007,
+          0.0006975409996812232,
+          0.0007079580027493648,
+          0.0006686670021736063
+        ],
+        "pytorch_repeat_seconds": [
+          1.2067527920007706,
+          1.261826125002699,
+          1.2379967080050847
+        ],
+        "reference_repeat_seconds": [
+          0.0010404999993625097,
+          0.0011159580026287585,
+          0.0010109169961651787
+        ],
+        "timing_scope": "batch JIT includes input latching and output arrays; Python includes per-scan API overhead"
+      }
+    ],
+    "batched_controllers": [
+      {
+        "batch_size_plcs": 1,
+        "device": "mps",
+        "workload": "self_hold.il; constant start input; no plant",
+        "wall_time_ms_per_step": 0.14039978999790037,
+        "amortized_us_per_plc_cycle": 140.39978999790037,
+        "total_scan_cycles_per_sec": 7122.517775952191,
+        "effective_instructions_per_sec": 35612.58887976096,
+        "repeat_seconds": [
+          0.03932041699590627,
+          0.028079957999580074,
+          0.027676750003593042,
+          0.028210749995196238,
+          0.027337541003362276
+        ]
+      },
+      {
+        "batch_size_plcs": 64,
+        "device": "mps",
+        "workload": "self_hold.il; constant start input; no plant",
+        "wall_time_ms_per_step": 0.139651874997071,
+        "amortized_us_per_plc_cycle": 2.1820605468292342,
+        "total_scan_cycles_per_sec": 458282.4255051521,
+        "effective_instructions_per_sec": 2291412.1275257603,
+        "repeat_seconds": [
+          0.027930374999414198,
+          0.027545625001948792,
+          0.027684250002494082,
+          0.02837908299989067,
+          0.02812287500273669
+        ]
+      },
+      {
+        "batch_size_plcs": 256,
+        "device": "mps",
+        "workload": "self_hold.il; constant start input; no plant",
+        "wall_time_ms_per_step": 0.15105646001757123,
+        "amortized_us_per_plc_cycle": 0.5900642969436376,
+        "total_scan_cycles_per_sec": 1694730.566109,
+        "effective_instructions_per_sec": 8473652.830545,
+        "repeat_seconds": [
+          0.03011458399851108,
+          0.030615624993515667,
+          0.030282665997219738,
+          0.030125208999379538,
+          0.030211292003514245
+        ]
+      },
+      {
+        "batch_size_plcs": 1024,
+        "device": "mps",
+        "workload": "self_hold.il; constant start input; no plant",
+        "wall_time_ms_per_step": 0.18480770999303786,
+        "amortized_us_per_plc_cycle": 0.18047627929007604,
+        "total_scan_cycles_per_sec": 5540894.370903554,
+        "effective_instructions_per_sec": 27704471.854517773,
+        "repeat_seconds": [
+          0.03705774999980349,
+          0.03698070799873676,
+          0.036704540994833224,
+          0.03696154199860757,
+          0.03678750000108266
+        ]
+      },
+      {
+        "batch_size_plcs": 10000,
+        "device": "mps",
+        "workload": "self_hold.il; constant start input; no plant",
+        "wall_time_ms_per_step": 0.8816647899948293,
+        "amortized_us_per_plc_cycle": 0.08816647899948293,
+        "total_scan_cycles_per_sec": 11342179.151850497,
+        "effective_instructions_per_sec": 56710895.75925249,
+        "repeat_seconds": [
+          0.1763029590001679,
+          0.17617158299981384,
+          0.1773309580021305,
+          0.17633295799896587,
+          0.1766593330030446
+        ]
+      }
+    ]
+  },
+  "experiment_3_safety_and_diff": {
+    "experiment": "Synthetic interlock filtering and separate sigmoid surrogate fitting",
+    "part_a_safety_guardrail": {
+      "input_source": "synthetic independent Bernoulli(0.5) bits; not an LLM",
+      "seed": 2026,
+      "total_agent_actions_tested": 10000,
+      "raw_short_circuit_commands": 2494,
+      "raw_estop_violation_commands": 4321,
+      "total_raw_hazardous_commands": 5583,
+      "post_guardrail_short_circuits": 0,
+      "post_guardrail_estop_violations": 0,
+      "hazard_interception_rate_pct": 100.0,
+      "safe_proposals_tested": 4417,
+      "safe_proposals_changed": 0,
+      "interlock_alarms_raised": 6228,
+      "exhaustive_patterns": 16,
+      "exhaustive_hazards_after_filter": 0,
+      "exhaustive_raw_max_error": 0.0,
+      "batch_10k_inference_time_ms": 24.838124998495914,
+      "batch_repeat_ms": [
+        24.260582998977043,
+        23.903166998934466,
+        24.838124998495914,
+        25.388291003764607,
+        24.95141699910164
+      ]
+    },
+    "part_b_differentiable_tuning": {
+      "initial_k": 1.5,
+      "target_k": 5.0,
+      "recovered_k": 4.9939,
+      "absolute_error": 0.0061,
+      "k_trajectory": [
+        1.5,
+        1.65,
+        4.4861,
+        5.2097,
+        4.95,
+        4.9939
+      ],
+      "loss_trajectory": [
+        0.617918,
+        0.074345,
+        0.029112,
+        0.020746,
+        0.020052
+      ]
+    }
+  }
+}

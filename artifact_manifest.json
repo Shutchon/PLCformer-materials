@@ -1,0 +1,69 @@
+{
+  "format_version": 1,
+  "workloads": [
+    {
+      "name": "Motor Start/Stop Interlock",
+      "program": "benchmarks/programs/self_hold.il",
+      "seed": 42,
+      "input_shape": [
+        100000,
+        16
+      ],
+      "input_dtype": "float32",
+      "scan_ticks": 1,
+      "instructions": 5,
+      "data": "data/self_hold.npz",
+      "checkpoint": "checkpoints/self_hold.safetensors",
+      "data_sha256": "1e4921c4ceb1e5e9d040dbb4873ebb7cc3b92bd5b9c4ade78f69f129789b5f53",
+      "checkpoint_sha256": "8c01bef6a847d3c44c6f7219b22c8632f3fe48f90ed08a9a11c15c7160f7bb29"
+    },
+    {
+      "name": "Star-Delta Motor Starter",
+      "program": "benchmarks/programs/star_delta.il",
+      "seed": 43,
+      "input_shape": [
+        100000,
+        16
+      ],
+      "input_dtype": "float32",
+      "scan_ticks": 1,
+      "instructions": 16,
+      "data": "data/star_delta.npz",
+      "checkpoint": "checkpoints/star_delta.safetensors",
+      "data_sha256": "f33bf7a2fb77c650f1b6f0b8d3597fc3511c868b2df4b99fe10043353013729a",
+      "checkpoint_sha256": "5d35cf4cb5ae910d42bd73107f9b37f694d251560de8cb603d48fdc69ef3d5d4"
+    },
+    {
+      "name": "4-Way Traffic Light Controller",
+      "program": "benchmarks/programs/traffic_light.il",
+      "seed": 44,
+      "input_shape": [
+        100000,
+        16
+      ],
+      "input_dtype": "float32",
+      "scan_ticks": 1,
+      "instructions": 37,
+      "data": "data/traffic_light.npz",
+      "checkpoint": "checkpoints/traffic_light.safetensors",
+      "data_sha256": "b063019c5c90ab40e79793948a8a92a498e6231f26880bc2266ef698b7c06ca1",
+      "checkpoint_sha256": "862be49ea8cf804aa2abee732d16cbaab1b0501050d249072e824a688ad6bf32"
+    },
+    {
+      "name": "Automated Conveyor Sorting",
+      "program": "benchmarks/programs/sorting.il",
+      "seed": 45,
+      "input_shape": [
+        100000,
+        16
+      ],
+      "input_dtype": "float32",
+      "scan_ticks": 1,
+      "instructions": 10,
+      "data": "data/sorting.npz",
+      "checkpoint": "checkpoints/sorting.safetensors",
+      "data_sha256": "24a55d06a3eee2c93810db062c16727ce9631089ed5af0e63439918a8b68ec15",
+      "checkpoint_sha256": "71602678b2a3566983aa85eab75b24af17bdc6d6c243c8841a94ada70778f429"
+    }
+  ]
+}
