@@ -1,0 +1,14 @@
+{
+  "repository": "https://github.com/Luoji-zju/Agents4PLC_release",
+  "commit": "774e640e8c0b254b5d0bac86836e40b233a276a8",
+  "source_path": "benchmark_v2/high-fidelity.jsonl",
+  "task_id": "249_ProductionLineControl",
+  "retrieved_on": "2026-11-01",
+  "license": "Apache-2.0",
+  "upstream_file_sha256": "e1898bbf67bb52d64113cecdcff683bd1920bf8d8f1436e17b60b0f208444950",
+  "original_st_sha256": "542561fa020e3fbebcff8ee3c3f2c382db36b16dfa5805868e930092f719b43b",
+  "record_sha256": "265526282e88af4c2c6a09e1d064c2833369725c6b9609baaf365c51ed49521e",
+  "adaptation": "portable.st removes only the Siemens S7_Optimized_Access storage attribute and // comments unsupported by this matiec version; executable statements unchanged. PLC-IR is a manual one-hot state lowering, not general ST/CASE support.",
+  "matiec_commit": "3a41303bcb4e50403417bc39c63f88981d7d961e",
+  "selection": "Before timing: external engineering task with supplied reference/test traces, nine Boolean inputs, eight control states, no unsupported timers/real arithmetic, and complete transition-domain enumeration feasible."
+}

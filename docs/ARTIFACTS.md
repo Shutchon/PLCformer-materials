@@ -11,7 +11,10 @@ This repository contains the computational materials only. The manuscript, submi
 | Tensor checkpoints | `checkpoints/*.safetensors` | Constructed ALU weights and fresh memory with program ROM |
 | Reference measurements | `results/reference/*.json` | Snapshot used for the reported evaluation; do not overwrite |
 | Working measurements | `benchmarks/*results*.json` | Rewritten when the complete experiment runner is used |
-| Regression/differential tests | `tests/` | 47 tests in the supplied snapshot |
+| Regression/differential tests | `tests/` | 51 tests in the supplied snapshot |
+| External controller and source provenance | `benchmarks/external/agents4plc/` | Upstream ST/fixtures/license and manual Boolean lowering |
+| External compiler and simulation | `benchmarks/production_line_case/` | Independent matiec oracle builder, tensor/native baselines and synthetic plant |
+| Result-to-material map | `docs/RESULTS_MAP.md` | Evidence paths and reproduction commands |
 | Input/checkpoint metadata | `artifact_manifest.json` | Seeds, dimensions, program names, and SHA-256 hashes |
 | Full package inventory | `MATERIALS_MANIFEST.json` | SHA-256 of all distributed material files except itself |
 | Source provenance | `PROVENANCE.json` | Source snapshot, snapshot hashes, and creation information |
@@ -35,3 +38,5 @@ CPU timing includes both neural execution and a direct integer Numba baseline. T
 ## Attribution
 
 The construction is inspired by [NESFormer](https://github.com/dbreunig/nesformer). PyTorch, NumPy, Numba, pytest, and safetensors are external dependencies; they are installed separately and are not vendored here. No reuse license was specified in the source repository; this materials package does not introduce a new license grant.
+
+The Agents4PLC ST/fixtures and their adaptations have separate Apache-2.0 terms; see `benchmarks/external/agents4plc/LICENSE` and `NOTICE`. The matiec compiler and its runtime headers are obtained separately at the pinned revision under their upstream terms. The simulated plant is not physical measurement data.

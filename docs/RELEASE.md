@@ -1,31 +1,44 @@
-# Publish the materials repository
+# Materials release 1.1.0
 
-This package is designed to be a separate Git repository with a fresh history. It must not inherit manuscript files or the main project's history.
+This consolidated package contains the original four workloads and the additional
+production-line case. The separate materials repository has its own history;
+the main project's manuscript and Git history are excluded.
 
-## Before publishing
+## Supplementary attachment
 
-```bash
+The submission route prepared for this version is the single archive
+`PLCformer-materials-v1.1.0.zip`. Attach it as reviewer-accessible supplementary
+material when submitting the manuscript. It replaces the two older attachments
+`PLCformer-materials-v1.0.0.zip` and `PLCformer-production-line-case.zip` for that
+submission; those remain historical artifacts and need not be uploaded as well.
+The preparation of this archive does not itself upload it to a journal portal.
+
+After extracting the archive, start with the root README. Verify the full
+inventory and export a readable report without installing experiment packages:
+
+```sh
 python tools/verify_artifacts.py
-git status --short
-git ls-files
+python tools/summarize_results.py
 ```
 
-The distributed files comprise source, tests, synthetic input traces, tensor exports, results, and documentation. No manuscript PDF, LaTeX source, cover letter, or review report belongs in this repository.
+To build an archive from the tagged repository, use:
 
-## GitHub publication
-
-The intended repository name is `PLCformer-materials` in the `Shutchon` account. This is a proposed destination until the remote has been created and checked.
-
-With the GitHub CLI installed and authenticated to an account permitted to create repositories:
-
-```bash
-gh auth login
-gh repo create Shutchon/PLCformer-materials --public --source . --remote origin --push
-git push origin v1.0.0
+```sh
+git archive --format=zip --prefix=PLCformer-materials-v1.1.0/ \
+  --output=../PLCformer-materials-v1.1.0.zip v1.1.0
 ```
 
-Use `gh repo create` only if that repository does not already exist. If a repository already exists, inspect its content and ownership before connecting this checkout; do not overwrite or force-push an existing history.
+The archive includes a file inventory with SHA-256 hashes. It excludes `.git`,
+virtual environments, generated native libraries, local runs, and the manuscript.
+Keep the reference results and versioned tag unchanged; new measurements belong
+under `results/local/` or in a new documented release.
 
-Verify that the new public repository can be opened without logging in. Then cite its actual URL and the immutable `v1.0.0` tag or full commit hash in the manuscript. The main project repository should not be substituted for this package URL.
+## Optional future public repository
 
-The repository contains a record of the original source snapshot and checksums. Timing reruns belong under `results/local/` or in a new documented release, not in place of the immutable reference results.
+No public repository URL or DOI is claimed in this release. If the authors later
+publish it, verify ownership and existing contents before creating or connecting
+a remote. Do not replace an existing history or force-push release tags.
+Push the separate materials repository and its exact release tag, then check the
+release and its downloadable files without authentication. Only after that check
+should the manuscript cite the actual public URL and immutable release/commit.
+The supplementary attachment is usable without a public hosting account.

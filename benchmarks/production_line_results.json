@@ -1,0 +1,664 @@
+{
+  "experiment": "External ST production-line controller and synthetic tensor plant",
+  "started_at_utc": "2026-11-02T02:07:54.377015+00:00",
+  "provenance": {
+    "repository": "https://github.com/Luoji-zju/Agents4PLC_release",
+    "commit": "774e640e8c0b254b5d0bac86836e40b233a276a8",
+    "source_path": "benchmark_v2/high-fidelity.jsonl",
+    "task_id": "249_ProductionLineControl",
+    "retrieved_on": "2026-11-01",
+    "license": "Apache-2.0",
+    "upstream_file_sha256": "e1898bbf67bb52d64113cecdcff683bd1920bf8d8f1436e17b60b0f208444950",
+    "original_st_sha256": "542561fa020e3fbebcff8ee3c3f2c382db36b16dfa5805868e930092f719b43b",
+    "record_sha256": "265526282e88af4c2c6a09e1d064c2833369725c6b9609baaf365c51ed49521e",
+    "adaptation": "portable.st removes only the Siemens S7_Optimized_Access storage attribute and // comments unsupported by this matiec version; executable statements unchanged. PLC-IR is a manual one-hot state lowering, not general ST/CASE support.",
+    "matiec_commit": "3a41303bcb4e50403417bc39c63f88981d7d961e",
+    "selection": "Before timing: external engineering task with supplied reference/test traces, nine Boolean inputs, eight control states, no unsupported timers/real arithmetic, and complete transition-domain enumeration feasible."
+  },
+  "environment": {
+    "python": "3.10.11",
+    "platform": "macOS-26.2-arm64-arm-64bit",
+    "torch": "2.14.1",
+    "numpy": "2.2.6",
+    "torch_threads": 4,
+    "cpu": "Apple M5"
+  },
+  "oracle_build": {
+    "matiec_commit": "3a41303bcb4e50403417bc39c63f88981d7d961e",
+    "matiec_command": [
+      "/private/tmp/plc-matiec/matiec-3a41303bcb4e50403417bc39c63f88981d7d961e/iec2c",
+      "-I",
+      "/private/tmp/plc-matiec/matiec-3a41303bcb4e50403417bc39c63f88981d7d961e/lib",
+      "-T",
+      "/Users/shutchon/Repositories/PLCformer/benchmarks/local/production_line_oracle",
+      "/Users/shutchon/Repositories/PLCformer/benchmarks/external/agents4plc/portable.st"
+    ],
+    "native_command": [
+      "clang",
+      "-O3",
+      "-shared",
+      "-fPIC",
+      "-I",
+      "/private/tmp/plc-matiec/matiec-3a41303bcb4e50403417bc39c63f88981d7d961e/lib/C",
+      "-I",
+      "/Users/shutchon/Repositories/PLCformer/benchmarks/local/production_line_oracle",
+      "/Users/shutchon/Repositories/PLCformer/benchmarks/local/production_line_oracle/wrapper.c",
+      "-o",
+      "/Users/shutchon/Repositories/PLCformer/benchmarks/local/production_line_oracle/oracle.so"
+    ],
+    "cc_version": "Apple clang version 21.0.0 (clang-2100.1.1.101)",
+    "matiec_binary_sha256": "cb1339dd355c3ed0e1d072d926a6cbd561e285573cd167e17489f8c228e7c886",
+    "generated_hashes": {
+      "POUS.c": "047d68cd552aa33aa290b064778193600c827ede181a2d6eb9610ca44a63d374",
+      "POUS.h": "05d7403f3b7085b1076fbdfa0681a299b9de9125bb4735ea77d8178cbdd63407",
+      "wrapper.c": "00fc0b2f6e148802dfb1dd591a7aa2728ac4076d99f39451605033701e8ec61c",
+      "oracle.so": "6d6213562fe63041b16add69b6618c9f8d0104a7c1b4e7b6ca0cabf1366eb9db"
+    }
+  },
+  "timing_protocol": {
+    "warmup_scans": 8,
+    "repeats": 3,
+    "scans_per_repeat": 64,
+    "method_order_seed": 249,
+    "boundary": "plant input construction, controller, command decoding and plant advance; MPS synchronized; reset/compilation excluded",
+    "host_boundary": "matiec method includes device-host input/state transfers, C batch call and return transfer",
+    "plant": "synthetic discrete-event conveyor, not physical plant data"
+  },
+  "exhaustive": [
+    {
+      "device": "cpu",
+      "transitions": 32768,
+      "neural_mismatches": 0,
+      "direct_tensor_mismatches": 0,
+      "raw_semantic_max_abs_error": 0.0,
+      "reachable_reference_states": 22,
+      "reachable_reference_transitions": 11264,
+      "reachable_mutual_exclusion_violations": 0,
+      "upstream_auto_reverse_counterexample": [
+        {
+          "Mode": 0,
+          "ForwardButton": 0,
+          "ReverseButton": 1,
+          "SensorA": 0,
+          "SensorB": 0,
+          "SensorC": 0,
+          "ButtonA": 0,
+          "ButtonB": 0,
+          "ButtonC": 0
+        },
+        {
+          "Mode": 1,
+          "ForwardButton": 0,
+          "ReverseButton": 0,
+          "SensorA": 0,
+          "SensorB": 0,
+          "SensorC": 0,
+          "ButtonA": 0,
+          "ButtonB": 0,
+          "ButtonC": 0
+        }
+      ]
+    },
+    {
+      "device": "mps",
+      "transitions": 32768,
+      "neural_mismatches": 0,
+      "direct_tensor_mismatches": 0,
+      "raw_semantic_max_abs_error": 0.0,
+      "reachable_reference_states": 22,
+      "reachable_reference_transitions": 11264,
+      "reachable_mutual_exclusion_violations": 0,
+      "upstream_auto_reverse_counterexample": [
+        {
+          "Mode": 0,
+          "ForwardButton": 0,
+          "ReverseButton": 1,
+          "SensorA": 0,
+          "SensorB": 0,
+          "SensorC": 0,
+          "ButtonA": 0,
+          "ButtonB": 0,
+          "ButtonC": 0
+        },
+        {
+          "Mode": 1,
+          "ForwardButton": 0,
+          "ReverseButton": 0,
+          "SensorA": 0,
+          "SensorB": 0,
+          "SensorC": 0,
+          "ButtonA": 0,
+          "ButtonB": 0,
+          "ButtonC": 0
+        }
+      ]
+    }
+  ],
+  "closed_loop": [
+    {
+      "device": "cpu",
+      "batch": 32,
+      "scans_per_line": 256,
+      "controller_scans": 8192,
+      "state_mismatches": 0,
+      "completed_parts": 224,
+      "raw_semantic_max_abs_error": 0.0
+    },
+    {
+      "device": "mps",
+      "batch": 32,
+      "scans_per_line": 256,
+      "controller_scans": 8192,
+      "state_mismatches": 0,
+      "completed_parts": 224,
+      "raw_semantic_max_abs_error": 0.0
+    }
+  ],
+  "timing": [
+    {
+      "device": "cpu",
+      "batch": 1,
+      "method": "matiec_host",
+      "scans_per_repeat": 64,
+      "repeat_seconds": [
+        0.04412879100027567,
+        0.005309500000294065,
+        0.005410916000073485
+      ],
+      "median_batch_scan_ms": 0.0845455625011482,
+      "controller_scans_per_second": 11827.941886203895,
+      "completed_parts_per_repeat": 1,
+      "final_state_and_plant_sha256": "4448c6bccadf304023b0021634f4967889807a973d17189c7d14d59b2e9af340"
+    },
+    {
+      "device": "cpu",
+      "batch": 1,
+      "method": "direct_tensor",
+      "scans_per_repeat": 64,
+      "repeat_seconds": [
+        0.009640125000260014,
+        0.009579500000199914,
+        0.009618167000098765
+      ],
+      "median_batch_scan_ms": 0.1502838593765432,
+      "controller_scans_per_second": 6654.07452369488,
+      "completed_parts_per_repeat": 1,
+      "final_state_and_plant_sha256": "4448c6bccadf304023b0021634f4967889807a973d17189c7d14d59b2e9af340"
+    },
+    {
+      "device": "cpu",
+      "batch": 1,
+      "method": "plcformer",
+      "scans_per_repeat": 64,
+      "repeat_seconds": [
+        0.08206329200038454,
+        0.08249604200000249,
+        0.0820797080000375
+      ],
+      "median_batch_scan_ms": 1.282495437500586,
+      "controller_scans_per_second": 779.7298694090232,
+      "completed_parts_per_repeat": 1,
+      "final_state_and_plant_sha256": "4448c6bccadf304023b0021634f4967889807a973d17189c7d14d59b2e9af340"
+    },
+    {
+      "device": "cpu",
+      "batch": 64,
+      "method": "matiec_host",
+      "scans_per_repeat": 64,
+      "repeat_seconds": [
+        0.005476082999848586,
+        0.005358207999961451,
+        0.005797083999823371
+      ],
+      "median_batch_scan_ms": 0.08556379687263416,
+      "controller_scans_per_second": 747979.8973304924,
+      "completed_parts_per_repeat": 64,
+      "final_state_and_plant_sha256": "0c0540e86ad2a2683c3a15b5627dbc223769a045ecb51de119941844dbf1f208"
+    },
+    {
+      "device": "cpu",
+      "batch": 64,
+      "method": "direct_tensor",
+      "scans_per_repeat": 64,
+      "repeat_seconds": [
+        0.009763292000116053,
+        0.01131566699996256,
+        0.01024837499971909
+      ],
+      "median_batch_scan_ms": 0.16013085937061078,
+      "controller_scans_per_second": 399673.11892005045,
+      "completed_parts_per_repeat": 64,
+      "final_state_and_plant_sha256": "0c0540e86ad2a2683c3a15b5627dbc223769a045ecb51de119941844dbf1f208"
+    },
+    {
+      "device": "cpu",
+      "batch": 64,
+      "method": "plcformer",
+      "scans_per_repeat": 64,
+      "repeat_seconds": [
+        0.16167929199991704,
+        0.14915350000001126,
+        0.1490563329998622
+      ],
+      "median_batch_scan_ms": 2.330523437500176,
+      "controller_scans_per_second": 27461.641865592766,
+      "completed_parts_per_repeat": 64,
+      "final_state_and_plant_sha256": "0c0540e86ad2a2683c3a15b5627dbc223769a045ecb51de119941844dbf1f208"
+    },
+    {
+      "device": "cpu",
+      "batch": 1024,
+      "method": "matiec_host",
+      "scans_per_repeat": 64,
+      "repeat_seconds": [
+        0.007416750000174943,
+        0.00739762500006691,
+        0.007455958999798895
+      ],
+      "median_batch_scan_ms": 0.11588671875273349,
+      "controller_scans_per_second": 8836215.323214907,
+      "completed_parts_per_repeat": 1024,
+      "final_state_and_plant_sha256": "1fd971be0a1c995347c63e54b981f18164e4a30e42745a6cc0ee5faf8681e8c4"
+    },
+    {
+      "device": "cpu",
+      "batch": 1024,
+      "method": "direct_tensor",
+      "scans_per_repeat": 64,
+      "repeat_seconds": [
+        0.01273216700019475,
+        0.012728000000151951,
+        0.012652082999920822
+      ],
+      "median_batch_scan_ms": 0.19887500000237424,
+      "controller_scans_per_second": 5148962.916343307,
+      "completed_parts_per_repeat": 1024,
+      "final_state_and_plant_sha256": "1fd971be0a1c995347c63e54b981f18164e4a30e42745a6cc0ee5faf8681e8c4"
+    },
+    {
+      "device": "cpu",
+      "batch": 1024,
+      "method": "plcformer",
+      "scans_per_repeat": 64,
+      "repeat_seconds": [
+        0.6845505420001246,
+        0.6870618339999055,
+        0.687491707999925
+      ],
+      "median_batch_scan_ms": 10.735341156248523,
+      "controller_scans_per_second": 95385.8834196414,
+      "completed_parts_per_repeat": 1024,
+      "final_state_and_plant_sha256": "1fd971be0a1c995347c63e54b981f18164e4a30e42745a6cc0ee5faf8681e8c4"
+    },
+    {
+      "device": "mps",
+      "batch": 1,
+      "method": "matiec_host",
+      "scans_per_repeat": 64,
+      "repeat_seconds": [
+        0.07170841700008168,
+        0.11742512499995428,
+        0.12175650000017413
+      ],
+      "median_batch_scan_ms": 1.8347675781242856,
+      "controller_scans_per_second": 545.0281615627398,
+      "completed_parts_per_repeat": 1,
+      "final_state_and_plant_sha256": "4448c6bccadf304023b0021634f4967889807a973d17189c7d14d59b2e9af340"
+    },
+    {
+      "device": "mps",
+      "batch": 1,
+      "method": "direct_tensor",
+      "scans_per_repeat": 64,
+      "repeat_seconds": [
+        0.05163062500014348,
+        0.05396362500005125,
+        0.05123579200017048
+      ],
+      "median_batch_scan_ms": 0.8067285156272419,
+      "controller_scans_per_second": 1239.5743805119955,
+      "completed_parts_per_repeat": 1,
+      "final_state_and_plant_sha256": "4448c6bccadf304023b0021634f4967889807a973d17189c7d14d59b2e9af340"
+    },
+    {
+      "device": "mps",
+      "batch": 1,
+      "method": "plcformer",
+      "scans_per_repeat": 64,
+      "repeat_seconds": [
+        0.30029812500015396,
+        0.29533504200026073,
+        0.2921325000002071
+      ],
+      "median_batch_scan_ms": 4.614610031254074,
+      "controller_scans_per_second": 216.70303519195497,
+      "completed_parts_per_repeat": 1,
+      "final_state_and_plant_sha256": "4448c6bccadf304023b0021634f4967889807a973d17189c7d14d59b2e9af340"
+    },
+    {
+      "device": "mps",
+      "batch": 64,
+      "method": "matiec_host",
+      "scans_per_repeat": 64,
+      "repeat_seconds": [
+        0.12039224999989528,
+        0.08256574999995792,
+        0.12092304099996909
+      ],
+      "median_batch_scan_ms": 1.8811289062483638,
+      "controller_scans_per_second": 34022.123517116444,
+      "completed_parts_per_repeat": 64,
+      "final_state_and_plant_sha256": "0c0540e86ad2a2683c3a15b5627dbc223769a045ecb51de119941844dbf1f208"
+    },
+    {
+      "device": "mps",
+      "batch": 64,
+      "method": "direct_tensor",
+      "scans_per_repeat": 64,
+      "repeat_seconds": [
+        0.05546354199987036,
+        0.05543704199999411,
+        0.05587799999966592
+      ],
+      "median_batch_scan_ms": 0.8666178437479743,
+      "controller_scans_per_second": 73850.3141398646,
+      "completed_parts_per_repeat": 64,
+      "final_state_and_plant_sha256": "0c0540e86ad2a2683c3a15b5627dbc223769a045ecb51de119941844dbf1f208"
+    },
+    {
+      "device": "mps",
+      "batch": 64,
+      "method": "plcformer",
+      "scans_per_repeat": 64,
+      "repeat_seconds": [
+        0.295576582999729,
+        0.2992698749999363,
+        0.2981915420000405
+      ],
+      "median_batch_scan_ms": 4.659242843750633,
+      "controller_scans_per_second": 13736.137425384935,
+      "completed_parts_per_repeat": 64,
+      "final_state_and_plant_sha256": "0c0540e86ad2a2683c3a15b5627dbc223769a045ecb51de119941844dbf1f208"
+    },
+    {
+      "device": "mps",
+      "batch": 1024,
+      "method": "matiec_host",
+      "scans_per_repeat": 64,
+      "repeat_seconds": [
+        0.10315375000027416,
+        0.08855520799988881,
+        0.10372087499990812
+      ],
+      "median_batch_scan_ms": 1.6117773437542837,
+      "controller_scans_per_second": 635323.4855720303,
+      "completed_parts_per_repeat": 1024,
+      "final_state_and_plant_sha256": "1fd971be0a1c995347c63e54b981f18164e4a30e42745a6cc0ee5faf8681e8c4"
+    },
+    {
+      "device": "mps",
+      "batch": 1024,
+      "method": "direct_tensor",
+      "scans_per_repeat": 64,
+      "repeat_seconds": [
+        0.05683999999973821,
+        0.05601387500018973,
+        0.053538583000317885
+      ],
+      "median_batch_scan_ms": 0.8752167968779645,
+      "controller_scans_per_second": 1169995.8269228477,
+      "completed_parts_per_repeat": 1024,
+      "final_state_and_plant_sha256": "1fd971be0a1c995347c63e54b981f18164e4a30e42745a6cc0ee5faf8681e8c4"
+    },
+    {
+      "device": "mps",
+      "batch": 1024,
+      "method": "plcformer",
+      "scans_per_repeat": 64,
+      "repeat_seconds": [
+        0.30817704099990806,
+        0.30423741699996754,
+        0.30348033299969757
+      ],
+      "median_batch_scan_ms": 4.753709640624493,
+      "controller_scans_per_second": 215410.7165589267,
+      "completed_parts_per_repeat": 1024,
+      "final_state_and_plant_sha256": "1fd971be0a1c995347c63e54b981f18164e4a30e42745a6cc0ee5faf8681e8c4"
+    }
+  ],
+  "supplied_traces": [
+    {
+      "case": 1,
+      "explicit_missing_forward_initialization": false,
+      "initial": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "scans": 6,
+      "neural_vs_matiec_mismatched_scans": 0,
+      "upstream_expected_mismatched_scans": 0,
+      "observed_states": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "case": 2,
+      "explicit_missing_forward_initialization": false,
+      "initial": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "scans": 9,
+      "neural_vs_matiec_mismatched_scans": 0,
+      "upstream_expected_mismatched_scans": 0,
+      "observed_states": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          3,
+          1,
+          0,
+          0
+        ],
+        [
+          4,
+          0,
+          0,
+          0
+        ],
+        [
+          5,
+          1,
+          0,
+          0
+        ],
+        [
+          6,
+          0,
+          0,
+          0
+        ],
+        [
+          7,
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "case": 3,
+      "explicit_missing_forward_initialization": false,
+      "initial": [
+        3,
+        0,
+        0,
+        0
+      ],
+      "scans": 5,
+      "neural_vs_matiec_mismatched_scans": 0,
+      "upstream_expected_mismatched_scans": 2,
+      "observed_states": [
+        [
+          3,
+          0,
+          0,
+          0
+        ],
+        [
+          3,
+          0,
+          0,
+          0
+        ],
+        [
+          4,
+          0,
+          0,
+          0
+        ],
+        [
+          4,
+          0,
+          0,
+          0
+        ],
+        [
+          4,
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "case": 3,
+      "explicit_missing_forward_initialization": true,
+      "initial": [
+        3,
+        1,
+        0,
+        0
+      ],
+      "scans": 5,
+      "neural_vs_matiec_mismatched_scans": 0,
+      "upstream_expected_mismatched_scans": 0,
+      "observed_states": [
+        [
+          3,
+          1,
+          0,
+          0
+        ],
+        [
+          3,
+          1,
+          0,
+          0
+        ],
+        [
+          4,
+          0,
+          0,
+          0
+        ],
+        [
+          4,
+          0,
+          0,
+          0
+        ],
+        [
+          4,
+          0,
+          0,
+          0
+        ]
+      ]
+    }
+  ],
+  "source_sha256": {
+    "benchmarks/external/agents4plc/LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "benchmarks/external/agents4plc/NOTICE": "57a27b6c4880cd08e1a8189fa662287ff88b28c78c65be7e834fa02c14bca63c",
+    "benchmarks/external/agents4plc/PROVENANCE.json": "221a4049640b60a341ea868e1aaf19bd96a4fc26e631af6b5ab601882a430a9f",
+    "benchmarks/external/agents4plc/original.st": "542561fa020e3fbebcff8ee3c3f2c382db36b16dfa5805868e930092f719b43b",
+    "benchmarks/external/agents4plc/portable.st": "12c526ffa76da5b751cd38c2698d752633b2cd45ad6b4e11bec6cb2e18a63158",
+    "benchmarks/external/agents4plc/production_line.il": "eebf8dcf3138939faf90b33f7a62b6c0c284fb6e264dd4daa6af0a6728defd99",
+    "benchmarks/external/agents4plc/source_record.json": "265526282e88af4c2c6a09e1d064c2833369725c6b9609baaf365c51ed49521e",
+    "benchmarks/production_line_case/__init__.py": "ef92228bb9989f58d9eeebe4a759e76cde9016730732bdf0743b3645a7e27db1",
+    "benchmarks/production_line_case/build_oracle.py": "6cb42e6eea7386662e54a6763705986c07cfe7ea107fcbf4c64dc60661b328f6",
+    "benchmarks/production_line_case/case.py": "6fb817a67b5ea07b2f1c33ac7b114787449743fae06ae4c7a45427aa93b2dd26",
+    "benchmarks/production_line_case/run.py": "385d33bc8aae614c36be45e9468532768878665c9faed2ec3c4c195b5c052c96",
+    "compiler/__init__.py": "22098698fee20009a522e6bc261848598f573ef8ad8544862e4ba542eb531402",
+    "compiler/assembler.py": "083d54a52c92e02eab8de6b2c69fb038d3aa532dfb632b1cdc21f1e88de63ba8",
+    "compiler/build_checkpoint.py": "870cfc4951b05e35b3364f66277d7647bc43b621f7a8fd9c8d244e60a66ac5d5",
+    "compiler/gdn_primitives.py": "ad030a31c297f59325705333c077e7cddef4fa3a64600699667074671274fbb7",
+    "compiler/isa.py": "8d925756a09eee5342d74204cd521858bcebeca2640435d13e15bd30e0bffa07",
+    "compiler/memory_map.py": "e68f950089ad8c6b780b835fe9cf0d2de2c887c106d35e79131ff20d0a24eb3a",
+    "compiler/mlp_alu.py": "5cddfb2c4e2255fdaee7566242789e998dbdb09f1ba775cb988f8f7e89e2a4c4",
+    "compiler/numeric.py": "036ade45e7a2ccaaf85bdf188aa79914f9640aac86633db9e28700cdd59076e2",
+    "compiler/st_transpiler.py": "3c1b72823ca46e71619ed561f29252fb681edea573b9a7c184a12b9dab74d5f8"
+  },
+  "finished_at_utc": "2026-11-02T02:08:06.546044+00:00"
+}

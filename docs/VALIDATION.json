@@ -1,7 +1,8 @@
 {
-  "date": "2026-11-01",
-  "tests_passed": 47,
-  "test_seconds": 54.93,
+  "date": "2026-11-02",
+  "version": "1.1.0",
+  "tests_passed": 51,
+  "test_seconds": 54.13,
   "example_outputs": [
     0,
     1,
@@ -9,15 +10,297 @@
     0,
     0
   ],
-  "isolated_imports_verified": true,
-  "generated_trace_matches": 4,
-  "checkpoint_initial_state_and_gate_weight_matches": 4,
-  "full_portability_rerun": {
-    "scans": 400000,
-    "mismatched_scans": 0,
-    "eager_prefix_scans_per_program": 500,
-    "batch_device": "cpu",
-    "elapsed_seconds": 106.078
+  "original_reference_json_unchanged": true,
+  "external_reference_json_matches_manuscript": true,
+  "csv_repeat_durations_checked": 54,
+  "new_timing_run": false,
+  "external_case_validation": {
+    "devices": [
+      "cpu"
+    ],
+    "rebuilt_matiec_oracle": true,
+    "exhaustive": [
+      {
+        "device": "cpu",
+        "transitions": 32768,
+        "neural_mismatches": 0,
+        "direct_tensor_mismatches": 0,
+        "raw_semantic_max_abs_error": 0.0,
+        "reachable_reference_states": 22,
+        "reachable_reference_transitions": 11264,
+        "reachable_mutual_exclusion_violations": 0,
+        "upstream_auto_reverse_counterexample": [
+          {
+            "Mode": 0,
+            "ForwardButton": 0,
+            "ReverseButton": 1,
+            "SensorA": 0,
+            "SensorB": 0,
+            "SensorC": 0,
+            "ButtonA": 0,
+            "ButtonB": 0,
+            "ButtonC": 0
+          },
+          {
+            "Mode": 1,
+            "ForwardButton": 0,
+            "ReverseButton": 0,
+            "SensorA": 0,
+            "SensorB": 0,
+            "SensorC": 0,
+            "ButtonA": 0,
+            "ButtonB": 0,
+            "ButtonC": 0
+          }
+        ]
+      }
+    ],
+    "closed_loop": [
+      {
+        "device": "cpu",
+        "batch": 32,
+        "scans_per_line": 256,
+        "controller_scans": 8192,
+        "state_mismatches": 0,
+        "completed_parts": 224,
+        "raw_semantic_max_abs_error": 0.0
+      }
+    ],
+    "supplied_traces": [
+      {
+        "case": 1,
+        "explicit_missing_forward_initialization": false,
+        "initial": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "scans": 6,
+        "neural_vs_matiec_mismatched_scans": 0,
+        "upstream_expected_mismatched_scans": 0,
+        "observed_states": [
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            1,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "case": 2,
+        "explicit_missing_forward_initialization": false,
+        "initial": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "scans": 9,
+        "neural_vs_matiec_mismatched_scans": 0,
+        "upstream_expected_mismatched_scans": 0,
+        "observed_states": [
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            2,
+            0,
+            0,
+            0
+          ],
+          [
+            3,
+            1,
+            0,
+            0
+          ],
+          [
+            4,
+            0,
+            0,
+            0
+          ],
+          [
+            5,
+            1,
+            0,
+            0
+          ],
+          [
+            6,
+            0,
+            0,
+            0
+          ],
+          [
+            7,
+            0,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "case": 3,
+        "explicit_missing_forward_initialization": false,
+        "initial": [
+          3,
+          0,
+          0,
+          0
+        ],
+        "scans": 5,
+        "neural_vs_matiec_mismatched_scans": 0,
+        "upstream_expected_mismatched_scans": 2,
+        "observed_states": [
+          [
+            3,
+            0,
+            0,
+            0
+          ],
+          [
+            3,
+            0,
+            0,
+            0
+          ],
+          [
+            4,
+            0,
+            0,
+            0
+          ],
+          [
+            4,
+            0,
+            0,
+            0
+          ],
+          [
+            4,
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "case": 3,
+        "explicit_missing_forward_initialization": true,
+        "initial": [
+          3,
+          1,
+          0,
+          0
+        ],
+        "scans": 5,
+        "neural_vs_matiec_mismatched_scans": 0,
+        "upstream_expected_mismatched_scans": 0,
+        "observed_states": [
+          [
+            3,
+            1,
+            0,
+            0
+          ],
+          [
+            3,
+            1,
+            0,
+            0
+          ],
+          [
+            4,
+            0,
+            0,
+            0
+          ],
+          [
+            4,
+            0,
+            0,
+            0
+          ],
+          [
+            4,
+            0,
+            0,
+            0
+          ]
+        ]
+      }
+    ]
   },
-  "note": "Reference timing JSON files are preserved. The portability rerun validates execution, not identical performance."
+  "previous_release_validation": {
+    "date": "2026-11-01",
+    "tests_passed": 47,
+    "test_seconds": 54.93,
+    "example_outputs": [
+      0,
+      1,
+      1,
+      0,
+      0
+    ],
+    "isolated_imports_verified": true,
+    "generated_trace_matches": 4,
+    "checkpoint_initial_state_and_gate_weight_matches": 4,
+    "full_portability_rerun": {
+      "scans": 400000,
+      "mismatched_scans": 0,
+      "eager_prefix_scans_per_program": 500,
+      "batch_device": "cpu",
+      "elapsed_seconds": 106.078
+    },
+    "note": "Reference timing JSON files are preserved. The portability rerun validates execution, not identical performance."
+  },
+  "note": "Release validation reruns Python tests and external CPU execution checks. Original and external reference timings are preserved; no full 400,000-scan experiment was rerun for version 1.1.0 packaging."
 }

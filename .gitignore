@@ -10,3 +10,4 @@ paper/
 *.pdf
 .env
 .env.*
+benchmarks/local/

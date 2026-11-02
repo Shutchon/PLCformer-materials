@@ -1,0 +1,3 @@
+device,batch,scans_per_line,controller_scans,state_mismatches,completed_parts,raw_semantic_max_abs_error
+cpu,32,256,8192,0,224,0.0
+mps,32,256,8192,0,224,0.0

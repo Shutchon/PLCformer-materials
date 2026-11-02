@@ -11,6 +11,9 @@ def main():
     summary = json.loads((ROOT/'results/reference/results_summary.json').read_text())
     for name, expected in summary['environment']['source_sha256'].items():
         assert digest(ROOT/name) == expected, f'Reference source mismatch: {name}'
+    external = json.loads((ROOT/'results/reference/production_line_results.json').read_text())
+    for name, expected in external['source_sha256'].items():
+        assert digest(ROOT/name) == expected, f'External-case source mismatch: {name}'
     artifacts = json.loads((ROOT/'artifact_manifest.json').read_text())
     for item in artifacts['workloads']:
         for kind in ['data','checkpoint']:
@@ -22,6 +25,7 @@ def main():
     forbidden = [name for name in inventory['files_sha256'] if Path(name).suffix.lower() in {'.pdf','.tex','.docx'}]
     assert not forbidden, f'Manuscript files in package: {forbidden}'
     print(f"Verified {len(summary['environment']['source_sha256'])} source hashes, "
+          f"{len(external['source_sha256'])} external-case source hashes (overlapping core files), "
           f"{len(artifacts['workloads'])} trace/checkpoint pairs, and {len(inventory['files_sha256'])} material files.")
 
 if __name__ == '__main__':

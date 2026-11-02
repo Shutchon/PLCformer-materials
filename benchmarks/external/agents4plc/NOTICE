@@ -1,0 +1,16 @@
+This case includes material from Agents4PLC_release by Luoji-zju and contributors.
+Repository: https://github.com/Luoji-zju/Agents4PLC_release
+Commit: 774e640e8c0b254b5d0bac86836e40b233a276a8
+Task: 249_ProductionLineControl, benchmark_v2/high-fidelity.jsonl
+The upstream Apache License 2.0 is included as LICENSE.
+
+PLCformer adaptations, 1 November 2026:
+- Extract the original task record and reference Structured Text without changes.
+- Remove the Siemens storage attribute and line comments for matiec portability.
+- Express the controller's eight states as one-hot Boolean PLC-IR state.
+- Add source-level tensor and native-library interfaces, explicit test-fixture
+  diagnostics, a synthetic conveyor simulator, and reproducibility tooling.
+The full upstream reference is preserved. No upstream logic correction is made.
+
+The direct tensor baseline and PLC-IR lowering are adaptations of the reference
+controller. They carry this attribution and the upstream Apache-2.0 terms.
